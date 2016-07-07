@@ -1,0 +1,22 @@
+[lang="ko"] body {
+    font-family: "나눔 고딕","Nanum Gothic","맑은 고딕","Malgun Gothic","Apple Gothic","돋움",Dotum,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+html, body {
+    height: 100%;
+}
+
+main {
+    min-height: 80%;
+}
+
+footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #343B44;
+    color: #647183;
+}
+
+.btn {
+    border-radius: 0;
+}
