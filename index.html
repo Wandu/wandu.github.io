@@ -2,9 +2,17 @@
 layout: default
 ---
 
-<div class="home">
+<h2>목차</h2>
 
-  <h2 class="page-heading">Posts</h2>
-  
-  겁나짱 예쁜 Wandu Framework
-</div>
+{% for post in site.posts reversed %}
+<ul>
+    <li><a href="#{{ post.anchor }}">{{ post.title }}</a></li>
+</ul>
+{% endfor %}
+
+
+{% for post in site.posts reversed %}
+<section class="chapter" id="{{ post.anchor }}">
+    {{ post.content }}
+</section>
+{% endfor %}
