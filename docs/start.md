@@ -1,0 +1,99 @@
+---
+title: 시작하기
+anchor: start
+layout: default
+permalink: /docs/start
+---
+
+## Wandu Framework?
+
+일반적으로 풀스택 프레임워크(Full-Stack Framework)를 지향하고 있으며, 패키지 분할을 통해 마이크로 프레임워크(Micro Framework) 처럼 사용할 수 있도록 작성하였습니다.
+
+## 풀스택 프레임워크로 사용하기 {#installation}
+
+[Composer](https://getcomposer.org)를 통해서 설치할 수 있습니다.
+
+```sh
+cd /your/project/path
+composer require wandu/framework
+```
+
+설치후에 `vendor/bin` 디렉토리에 있는 `wandu`를 통해 `install`명령어를 실행할 수 있습니다.
+
+```
+vendor/bin/wandu install
+```
+
+그러면 두개의 질문을 물어봅니다. 첫번째는 설치경로, 두번째는 사용할 어플리케이션의 네임스페이스입니다.
+첫번째 질문은 특수한 상황이 아니라면 그냥 기본값을 사용하면 됩니다.
+
+```
+ install path? [/your/project/path]:
+ >
+```
+
+두번째 질문은 어플리케이션에서 사용할 네임스페이스입니다. 원하는 값을 입력하세요. 그리고 이왕이면 PSR-4 규칙에 따라서,
+PascalCase로 작성해주시기 바랍니다.
+
+```
+ app namespace? [Wandu\App]:
+ >
+```
+
+모든 설치가 끝났습니다.
+
+`public/index.php` 파일이 보이시나요? 이제 이 파일을 통해서 어플리케이션을 실행할 수 있습니다.
+
+```sh
+php -S 127.0.0.1:8080 -t public
+```
+
+위 명령어를 통해서 어플리케이션을 실행해보세요. 그리고 브라우저에 `127.0.0.1:8080`을 입력해보세요.
+정상적으로 설치되었다면 **Hello Wandu**라는 메시지가 출력됩니다.
+
+## 마이크로 프레임워크로 사용하기
+
+```sh
+cd /your/project/path
+composer require wandu/di wandu/http wandu/router
+```
+
+```php
+<?php
+use Wandu\Config\Config;
+use Wandu\DI\Container;
+use Wandu\Http\HttpServiceProvider;
+use Wandu\Http\Psr\Factory\ServerRequestFactory;
+use Wandu\Http\Psr\Sender\ResponseSender;
+use Wandu\Router\Dispatcher;
+use Wandu\Router\Router;
+use Wandu\Router\RouterServiceProvider;
+
+require __DIR__ . '/vendor/autoload.php';
+
+class HelloController
+{
+    public function index()
+    {
+        return 'hello string';
+    }
+}
+
+$container = new Container();
+
+$container->instance('config', new Config([]));
+
+$container->register(new HttpServiceProvider());
+$container->register(new RouterServiceProvider());
+
+$container->boot();
+
+$dispatcher = $container->get(Dispatcher::class);
+
+$request = $container->get(ServerRequestFactory::class)->createFromGlobals();
+$response = $dispatcher->withRoutes(function (Router $router) {
+    $router->get('/', HelloWorldController::class);
+})->dispatch($request);
+
+$container->get(ResponseSender::class)->sendToGlobal($response);
+```
