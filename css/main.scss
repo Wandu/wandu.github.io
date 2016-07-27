@@ -40,7 +40,7 @@ a.anchor[name] {
     border-bottom: 1px solid #ccc;
 }
 
-.navbar-static-top + main {
+.navbar-static-top + .container {
     margin-top: 80px;
 }
 
@@ -87,4 +87,10 @@ a.anchor[name] {
 .navbar-toggle {
     padding: 16px 18px;
     margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+    aside .affix {
+        position: static;
+    }
 }

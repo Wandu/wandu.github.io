@@ -40,22 +40,22 @@
     </div>
 </header>
 
-<main>
-    <div class="container">
-        <div class="row">
-            <aside class="col-sm-4 col-md-3">
+<div class="container">
+    <div class="row">
+        <aside class="col-sm-4 col-md-3">
+            <div class="affix">
                 <ul class="nav nav-pills nav-stacked">
                     {% for post in site.posts reversed %}
                     <li><a class="page-link" href="#{{ post.anchor }}">{{ post.title }}</a></li>
                     {% endfor %}
                 </ul>
-            </aside>
-            <main class="col-sm-8 col-md-9">
-                {{ content }}
-            </main>
-        </div>
+            </div>
+        </aside>
+        <main class="col-sm-8 col-md-9">
+            {{ content }}
+        </main>
     </div>
-</main>
+</div>
 
 <!--[if lt IE 9]>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
