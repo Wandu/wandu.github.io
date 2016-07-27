@@ -3,7 +3,7 @@ title: Wandu Framework
 
 email: im@wani.kr
 
-permalink: /posts/:year/:month/:day/:title/
+permalink: /posts/:title/
 paginate_path: /posts/page/:num
 
 paginate: 10

@@ -1,5 +1,6 @@
 ---
 title: Wandu DI
+anchor: wandu-di
 layout: default
 permalink: /docs/packages/di
 ---
