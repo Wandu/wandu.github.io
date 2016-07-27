@@ -17,11 +17,11 @@ a:focus, a:hover {
     color: #333;
 }
 
-@import "syntax-highlighting";
-
 .btn {
     border-radius: 0;
 }
+
+@import "syntax-highlighting";
 
 section.chapter {
     position: relative;
@@ -46,13 +46,35 @@ a.anchor[name] {
 
 .navbar-brand {
     padding: 10px 15px;
-    background: url(/images/logo.png) no-repeat;
-    background-size: 50px 50px;
-    background-position: 15px 10px;
     width: 80px;
-    overflow: hidden;
-    text-indent: -999px;
     height: 70px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    position: relative;
+    span {
+        transition: 0.6s;
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        backface-visibility: hidden;
+    }
+    span.front {
+        transform: rotateY(0deg);
+        z-index: 2;
+    }
+    &:hover span.front {
+        transform: rotateY(180deg);
+    }
+    span.back {
+        transform: rotateY(180deg);
+    }
+    &:hover span.back {
+        transform: rotateY(0deg);
+    }
+    img {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -60,4 +82,9 @@ a.anchor[name] {
         padding-top: 25px;
         padding-bottom: 25px;
     }
+}
+
+.navbar-toggle {
+    padding: 16px 18px;
+    margin-right: 5px;
 }
