@@ -2,7 +2,7 @@
  * Syntax highlighting styles
  */
 .highlight {
-    background: #393939;
+    background: #2B2B2B;
     border: 1px solid #171714;
     border-radius: 3px;
 
@@ -14,11 +14,11 @@
     .hll { background-color: #49483e }
     .c { color: #75715e } /* Comment */
     .err { color: #960050; background-color: #1e0010 } /* Error */
-    .k { color: #66d9ef } /* Keyword */
+    .k { color: #CC7832 } /* Keyword */
     .l { color: #ae81ff } /* Literal */
     .n { color: #f8f8f2 } /* Name */
-    .o { color: #f92672 } /* Operator */
-    .p { color: #f8f8f2 } /* Punctuation */
+    .o { color: #A9B7C6 } /* Operator */
+    .p { color: #A9B7C6 } /* Punctuation */
     .cm { color: #75715e } /* Comment.Multiline */
     .cp { color: #75715e } /* Comment.Preproc */
     .c1 { color: #75715e } /* Comment.Single */
@@ -34,20 +34,20 @@
     .ld { color: #e6db74 } /* Literal.Date */
     .m { color: #ae81ff } /* Literal.Number */
     .s { color: #e6db74 } /* Literal.String */
-    .na { color: #a6e22e } /* Name.Attribute */
+    .na { color: #ffc66d } /* Name.Attribute */
     .nb { color: #f8f8f2 } /* Name.Builtin */
-    .nc { color: #a6e22e } /* Name.Class */
+    .nc { color: #ffc66d } /* Name.Class */
     .no { color: #66d9ef } /* Name.Constant */
     .nd { color: #a6e22e } /* Name.Decorator */
     .ni { color: #f8f8f2 } /* Name.Entity */
     .ne { color: #a6e22e } /* Name.Exception */
-    .nf { color: #a6e22e } /* Name.Function */
+    .nf { color: #ffc66d } /* Name.Function */
     .nl { color: #f8f8f2 } /* Name.Label */
     .nn { color: #f8f8f2 } /* Name.Namespace */
-    .nx { color: #a6e22e } /* Name.Other */
+    .nx { color: #A9B7C6 } /* Name.Other */
     .py { color: #f8f8f2 } /* Name.Property */
     .nt { color: #f92672 } /* Name.Tag */
-    .nv { color: #f8f8f2 } /* Name.Variable */
+    .nv { color: #9876AA } /* Name.Variable */
     .ow { color: #f92672 } /* Operator.Word */
     .w { color: #f8f8f2 } /* Text.Whitespace */
     .mf { color: #ae81ff } /* Literal.Number.Float */
@@ -63,7 +63,7 @@
     .si { color: #e6db74 } /* Literal.String.Interpol */
     .sx { color: #e6db74 } /* Literal.String.Other */
     .sr { color: #e6db74 } /* Literal.String.Regex */
-    .s1 { color: #e6db74 } /* Literal.String.Single */
+    .s1 { color: #6a8759 } /* Literal.String.Single */
     .ss { color: #e6db74 } /* Literal.String.Symbol */
     .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
     .vc { color: #f8f8f2 } /* Name.Variable.Class */
