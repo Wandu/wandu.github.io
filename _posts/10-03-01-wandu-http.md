@@ -1,8 +1,6 @@
 ---
 title: Wandu Http
 anchor: wandu-http
-layout: default
-permalink: /docs/packages/http
 ---
 
 ## 개요 {#wandu-http-intro}

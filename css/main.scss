@@ -16,6 +16,14 @@ a {
 a:focus, a:hover {
     color: #333;
 }
+p {
+    a {
+        color: #337ab7;
+    }
+    a:focus, a:hover {
+        color: #23527c;
+    }
+}
 
 .btn {
     border-radius: 0;
@@ -97,5 +105,27 @@ a.anchor[name] {
 @media (max-width: 767px) {
     aside .affix {
         position: static;
+    }
+}
+
+
+.wandu-nav {
+    &, ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        // padding-left: 10px;
+    }
+    li > a {
+        display: block;
+        padding: 10px;
+    }
+    li > ul {
+        display: none;
+        margin-left: 10px;
+    }
+    li:hover > ul {
+        display: block;
     }
 }
