@@ -92,18 +92,6 @@
 <script>
 (function ($) {
     $('a[href^="http://"], a[href^="https://"]').not('a[href*=wandu\\.github\\.io]').attr('target','_blank');
-    $('pre > code').each(function() {
-        var lines = this.innerHTML.split("\n");
-        if (lines.length > 5) {
-            var i;
-            var ol = '<ol class="linenums">';
-            for (i in lines) {
-                ol += '<li>' + lines[i] + '</li>';
-            }
-            this.innerHTML = ol;
-            $(this).addClass('linenums');
-        }
-    });
 })(jQuery);
 </script>
 </body>
