@@ -12,6 +12,7 @@ Wandu Http는 PSR-7를 구현한 컴포넌트입니다. 그리고 PSR-7에서 �
 일반적인 PHP 사용환경에서는 다음과 같은 순서로 동작시킬 수 있습니다.
 
 ```php
+<?php
 use Wandu\Http\Cookie\CookieJarFactory;
 use Wandu\Http\Factory\ResponseFactory;
 use Wandu\Http\Factory\ServerRequestFactory;
@@ -75,6 +76,7 @@ Wandu Http는 PSR7에서 사용하기 쉽게 몇가지 기능들을 제공하고
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\File\Uploader;
 
 $uploader = new Uploader(__DIR__ . '/files');
@@ -92,6 +94,7 @@ print_r($result);
 `Wandu\Http\Cookie\CookieJar` is implementation of `Wandu\Http\Contracts\CookieJarInterface`
 
 ```php
+<?php
 namespace Wandu\Http\Contracts;
 
 use Wandu\Http\Contracts\ParameterInterface;
@@ -123,6 +126,7 @@ interface CookieJarInterface extends ArrayAccess, IteratorAggregate, ParameterIn
 This is useful for bringing a cookie jar object(`CookieJarInterface`) from the server request object(`ServerRequestInterface`). And a cookie jar object brought from the server request object must apply to the response object(`ResponseInterface`).
 
 ```php
+<?php
 namespace Wandu\Http\Cookie;
 
 use Psr\Http\Message\ResponseInterface;
@@ -143,6 +147,7 @@ class CookieJarFactory
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Cookie\CookieJarFactory;
 use Wandu\Http\Psr\Response;
 use Wandu\Http\Psr\ServerRequest;
@@ -165,6 +170,7 @@ $response = $cookieFactory->toResponse($cookie, $response);
 `Wandu\Http\Session\Session` is implementation of `Wandu\Http\Contracts\SessionInterface`
 
 ```php
+<?php
 namespace Wandu\Http\Contracts;
 
 use Wandu\Http\Contracts\ParameterInterface;
@@ -202,6 +208,7 @@ interface SessionInterface extends ArrayAccess, ParameterInterface
 This is useful for bringing a session object(`SessionInterface`) from the cookie jar  object(`CookieJarInterface`). And a session object brought from the cookie jar object must apply to the same cookie jar object(`CookieJarInterface`).
 
 ```php
+<?php
 namespace Wandu\Http\Session;
 
 use DateTime;
@@ -225,6 +232,7 @@ class SessionFactory
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Contracts\CookieJarInterface;
 use Wandu\Http\Session\SessionFactory;
 use Wandu\Http\Session\Adapter\FileAdapter;
@@ -251,6 +259,7 @@ There are three adapters.
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Session\SessionFactory;
 use Wandu\Http\Session\Adapter\FileAdapter;
 
@@ -262,6 +271,7 @@ $sessionManager = new SessionFactory(new FileAdapter(__DIR__ . '/_sess'));
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Session\SessionFactory;
 use Wandu\Http\Session\Adapter\RedisAdapter;
 
@@ -278,6 +288,7 @@ $sessionManager = new SessionFactory(new RedisAdapter($redisClient));
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Session\SessionFactory;
 use Wandu\Http\Session\Adapter\GlobalAdapter;
 
@@ -291,6 +302,7 @@ $sessionManager = new SessionFactory(new GlobalAdapter()); // get session by $_S
 `ServerRequestInterface`::`getParsedBody()` and `getQueryParams()` return array. If you want to use these array as a object, use `Parameter` class.
 
 ```php
+<?php
 namespace Wandu\Http\Contracts;
 
 interface ParameterInterface
@@ -319,6 +331,7 @@ interface ParsedBodyInterface extends ParameterInterface
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Parameters\Parameter;
 
 $parsedBody = new Parameter($request->getParsedBody());
@@ -327,6 +340,7 @@ $userId = $parsedBody->get('user_id', 0); // return user_id, or 0.
 ```
 
 ```php
+<?php
 use Wandu\Http\Parameters\Parameter;
 
 $queryParams = new Parameter($request->getQueryParams());
@@ -348,6 +362,7 @@ There are very useful 4 streams.
 ##### Default Stream
 
 ```php
+<?php
 namespace Wandu\Http\Psr;
 
 use Psr\Http\Message\StreamInterface;
@@ -365,6 +380,7 @@ class Stream implements StreamInterface
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Psr\Stream;
 
 // read / write
@@ -377,6 +393,7 @@ $stream = new Stream('php://input');
 ##### String Stream
 
 ```php
+<?php
 namespace Wandu\Http\Psr\Stream;
 
 use Psr\Http\Message\StreamInterface;
@@ -394,6 +411,7 @@ class StringStream implements StreamInterface
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Psr\Stream\StringStream;
 
 $stream = new StringStream('hello world!!');
@@ -403,6 +421,7 @@ echo $stream->__toString(); // "hello world!!"
 ##### PHP Input Stream
 
 ```php
+<?php
 namespace Wandu\Http\Psr\Stream;
 
 use Psr\Http\Message\StreamInterface;
@@ -413,10 +432,12 @@ class PhpInputStream implements StreamInterface
     ...
 }
 ```
+<?php
 
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Psr\Stream\PhpInputStream;
 
 $stream = new PhpInputStream();
@@ -427,9 +448,11 @@ echo $stream->__toString(); // also print php://input.
 
 ##### Generator Stream
 
+<?php
 It's very useful to print **big** csv, xml, json and so on.
 
 ```php
+<?php
 namespace Wandu\Http\Psr\Stream;
 
 use Closure;
@@ -440,6 +463,7 @@ class GeneratorStream implements StreamInterface
 
     public __construct(Closure $handler)
 
+<?php
     /* Inherited methods (from StreamInterface) */
     ...
 }
@@ -448,6 +472,7 @@ class GeneratorStream implements StreamInterface
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Psr\Stream\GeneratorStream;
 
 $stream = new GeneratorStream(function () {
@@ -457,13 +482,15 @@ $stream = new GeneratorStream(function () {
 });
 
 echo $stream->__toString(); // print '00\n01\n ... 08\n09\n'
-echo $stream->__toString(); // also print '00\n01\n ... 08\n09\n'
+echo $stream->__toString(); // also print '00\n01\n ... <?php
+08\n09\n'
 ```
 
 
 #### Message
 
 ```php
+<?php
 Wandu\Http\Psr\Message::__construct(
     string $protocolVersion = '1.1',
     array $headers = [],
@@ -474,6 +501,7 @@ Wandu\Http\Psr\Message::__construct(
 #### Response
 
 ```php
+<?php
 Wandu\Http\Psr\Response::__construct(
     int $statusCode = 200,
     string $reasonPhrase = '',
@@ -486,6 +514,7 @@ Wandu\Http\Psr\Response::__construct(
 #### Request
 
 ```php
+<?php
 Wandu\Http\Psr\Request::__construct(
     string $method = null,
     Psr\Http\Message\UriInterface $uri = null,
@@ -498,6 +527,7 @@ Wandu\Http\Psr\Request::__construct(
 #### ServerRequest
 
 ```php
+<?php
 Wandu\Http\Psr\ServerRequest::__construct(
     array $serverParams = [],
     array $cookieParams = [],
@@ -518,6 +548,7 @@ You think it's too complicated. If you want more simple source, use [ServerReque
 #### UploadedFile
 
 ```php
+<?php
 Wandu\Http\Psr\UploadedFile::__construct(
     string $file = null,
     int $size = null,
@@ -532,6 +563,7 @@ You think it's too complicated also. If you want more simple source, use [Upload
 #### Uri
 
 ```php
+<?php
 Wandu\Http\Psr\Uri::__construct(
     string $uri
 )
@@ -546,6 +578,7 @@ Wandu\Http\Psr\Uri::join(
 It executes like urljoin function in python.
 
 ```php
+<?php
 $uri = new Uri('http://wani.kr/hello/world');
 $uriToJoin = new Uri('../other-link');
 
@@ -558,6 +591,7 @@ If you want to see more detail test cases, see
 **Example.**
 
 ```php
+<?php
 // case in-sensitive
 new Uri('http://blog.wani.kr');
 new Uri('http://BLOG.WANI.KR');
@@ -591,6 +625,7 @@ new Uri('http://blog.wani.kr/path/name?hello=world#fragment');
 #### UploadedFileFactory
 
 ```php
+<?php
 Wandu\Http\Factory\UploadedFileFactory::fromFiles(
     array $files
 )
@@ -599,6 +634,7 @@ Wandu\Http\Factory\UploadedFileFactory::fromFiles(
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Factory\UploadedFileFactory;
 
 $factory = new UploadedFileFactory();
@@ -609,6 +645,7 @@ $treeOfFiles; // array of UploadedFile object.
 #### ServerRequestFactory
 
 ```php
+<?php
 Wandu\Http\Factory\ServerRequestFactory::__construct(
     Wandu\Http\Factory\UploadedFileFactory $fileFactory
 )
@@ -619,6 +656,7 @@ Wandu\Http\Factory\ServerRequestFactory::fromGlobals()
 **Example.**
 
 ```php
+<?php
 use Wandu\Http\Factory\ServerRequestFactory;
 use Wandu\Http\Factory\UploadedFileFactory;
 
@@ -631,6 +669,7 @@ $serverRequest; // instanceof ServerRequestInterface
 #### ResponseSender
 
 ```php
+<?php
 Wandu\Http\Sender\ResponseSender::sendToGlobal(
     Psr\Http\Message\ResponseInterface $response
 ) :void
