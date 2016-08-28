@@ -1,11 +1,11 @@
 ---
-title: Wandu Validator
-anchor: wandu-validator
+title: Validator
+anchor: validator
 ---
 
-## 개요
+# Validator {#validator-title}
 
-값 체크를 위한 라이브러리.
+값체크를 쉽게 하기 위해 만들어진 패키지입니다.
 
 ## 사용법
 

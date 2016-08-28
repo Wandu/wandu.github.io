@@ -3,7 +3,7 @@ title: 풀스택 프레임워크로 사용하기
 anchor: install-as-fullstack
 ---
 
-## 풀스택 프레임워크로 사용하기 {#installation}
+## 풀스택 프레임워크로 사용하기 {#installation-as-fullstack-title}
 
 [Composer](https://getcomposer.org)를 통해서 설치할 수 있습니다. 아직은 개발버전이라서 뒤에 "dev-develop"을 만드시 함께
 적어야 합니다.

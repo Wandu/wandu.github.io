@@ -1,8 +1,7 @@
 ---
-title: 패키지
+title: 그 외 패키지
 anchor: packages
 ---
 
-# 패키지 {#packages_title}
+# 그 외 패키지 {#packages_title}
 
-..작성중**

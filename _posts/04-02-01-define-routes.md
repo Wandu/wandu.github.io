@@ -1,9 +1,9 @@
 ---
-title: 라우터 정의하기
+title: 정의하기
 anchor: define-routes
 ---
 
-## 라우터 정의하기 {#define-routes-title}
+## 정의하기 {#define-routes-title}
 
 [Definition(앱 정의하기 항목) 파일](/#definition)의 `routes()`함수를 통해서 쉽게 정의할 수 있습니다.
 
