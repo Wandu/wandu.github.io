@@ -35,50 +35,14 @@
             </a>
         </div>
         <nav id="navigation" class="collapse navbar-collapse">
-            <ul class="wandu-nav visible-xs">
-{% capture navigation %}
-{% for post in site.posts reversed %}
-{% assign next_depth0 = post.next.date | date: "%y" %}
-{% assign next_depth1 = post.next.date | date: "%m" %}
-{% assign depth0 = post.date | date: "%y" %}
-{% assign depth1 = post.date | date: "%m" %}
-                <li>
-                    <a href="/#{{ post.anchor}}">{{ post.title }}</a>
-{% if prev_depth0 != depth0 %}
-                    <ul>
-{% else %}
-                </li>
-{% endif %}
-{% if next_depth0 != depth0 %}
-                    </ul>
-{% endif %}
-{% assign prev_depth0 = depth0 %}
-{% assign prev_depth1 = depth1 %}
-{% endfor %}
-{% endcapture %}
-{{ navigation }}
-            </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/Wandu/Framework" target="_blank"><i class="fa fa-github"></i> View on Github</a></li>
+                <li><a href="https://github.com/Wandu" target="_blank"><i class="fa fa-github"></i> View on Github</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<div class="container">
-    <div class="row">
-        <aside class="col-sm-4 col-md-3 hidden-xs">
-            <div class="affix">
-                <ul class="wandu-nav">
-                    {{ navigation }}
-                </ul>
-            </div>
-        </aside>
-        <main class="col-sm-8 col-md-9">
-            {{ content }}
-        </main>
-    </div>
-</div>
+{{ content }}
 
 <!--[if lt IE 9]>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

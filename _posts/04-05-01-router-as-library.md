@@ -8,7 +8,7 @@ anchor: router-as-library
 Wandu의 라우터는 별도의 패키지로 사용할 수 있도록 지원하고 있습니다.
 
 ```
-composer install wandu/router:dev-develop
+composer install wandu/router
 ```
 
 별도 패키지에서 라우터는 PSR7 기반의 패키지를 사용중이어야 합니다. 사용방법은 다음과 같습니다.

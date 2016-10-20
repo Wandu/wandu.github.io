@@ -5,12 +5,11 @@ anchor: install-as-fullstack
 
 ## 풀스택 프레임워크로 사용하기 {#installation-as-fullstack-title}
 
-[Composer](https://getcomposer.org)를 통해서 설치할 수 있습니다. 아직은 개발버전이라서 뒤에 "dev-develop"을 만드시 함께
-적어야 합니다.
+[Composer](https://getcomposer.org)를 통해서 설치할 수 있습니다.
 
 ```sh
 cd /your/project/path
-composer require "wandu/framework:dev-develop"
+composer require wandu/framework
 ```
 
 설치후에 `vendor/bin` 디렉토리에 있는 `wandu`를 통해 `install`명령어를 실행할 수 있습니다.
@@ -28,11 +27,11 @@ vendor/bin/wandu install
 ```
 
 두번째 질문은 어플리케이션에서 사용할 네임스페이스입니다. 원하는 값을 입력하세요. 그리고 이왕이면 PSR-4 규칙에 따라서,
-PascalCase로 작성해주시기 바랍니다.
+PascalCase로 작성해주시기 바랍니다. 문서에서는 기본값인 `Wandu\App`을 그대로 사용했다는 전제하에 진행하겠습니다.
 
 ```
  app namespace? [Wandu\App]:
- >
+ > 
 ```
 
 모든 설치가 끝났습니다.

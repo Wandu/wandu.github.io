@@ -5,7 +5,8 @@ anchor: define-middleware
 
 ## 미들웨어(Middleware) {#define-middleware-title}
 
-미들웨어를 사용할 수 있습니다. 미들웨어 객체는 `Wandu\Router\Contracts\MiddlewareInterface`를 구현하면 됩니다. 다음은 세션을 사용하기 위한 `Sessionify` 미들웨어의 예시입니다.
+미들웨어를 사용할 수 있습니다. 미들웨어 객체는 `Wandu\Router\Contracts\MiddlewareInterface`를 구현하면 됩니다. 다음은
+세션을 사용하기 위한 `Sessionify` 미들웨어의 예시입니다.
 
 ```php
 <?php
@@ -66,7 +67,8 @@ class Sessionify implements MiddlewareInterface
 }
 ```
 
-위 미들웨어(Middleware)는 다음과 같이 사용할 수 있습니다. 그룹으로 묶어서 사용할 수 있고, 단 하나의 라우터에 정의해서 사용할 수 있습니다.
+위 미들웨어(Middleware)는 다음과 같이 사용할 수 있습니다. 그룹으로 묶어서 사용할 수 있고, 단 하나의 라우터에 정의해서
+사용할 수 있습니다.
 
 ```php
 <?php

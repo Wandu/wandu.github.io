@@ -10,12 +10,6 @@ html, body {
     height: 100%;
 }
 
-a {
-    color: #555;
-}
-a:focus, a:hover {
-    color: #333;
-}
 p {
     a {
         color: #337ab7;
@@ -39,7 +33,7 @@ h1 {
 section.chapter {
     position: relative;
     & + & {
-        margin-top: 65px;
+        margin-top: 40px;
         > h1 {
             border-top: 1px solid #d7d7d7;
             padding-top: 55px;
@@ -118,6 +112,13 @@ a.anchor[name] {
 
 
 .wandu-nav {
+
+    a {
+        color: #555;
+    }
+    a:focus, a:hover {
+        color: #333;
+    }
     &, ul {
         list-style: none;
         padding: 0;

@@ -5,7 +5,7 @@ anchor: define-routes
 
 ## 정의하기 {#define-routes-title}
 
-[Definition(앱 정의하기 항목) 파일](/#definition)의 `routes()`함수를 통해서 쉽게 정의할 수 있습니다.
+`/app/routes.php`의 파일을 통해서 쉽게 정의할 수 있습니다.
 
 기본적으로 RESTful 메서드 전체를 지원하고 있습니다.
 
