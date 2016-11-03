@@ -1,4 +1,5 @@
 ---
+layout: default
 title: HTTP(PSR7)
 anchor: http
 ---
@@ -71,7 +72,7 @@ PSR-7 구현체에 대한 설명을 보고 싶으시다면 하위에 [PSR-7 Impl
 
 ### File Uploader
 
-Wandu Http는 PSR7에서 사용하기 쉽게 몇가지 기능들을 제공하고 있습니다. 그 중 하나가 바로 File Uploader입니다. PSR-7에서는 업로드 객체를 만들어 주는 내용까지만 명시되어있습니다. 이 객체를 활용한 업로더를 제공하지 않는데요, 
+Wandu Http는 PSR7에서 사용하기 쉽게 몇가지 기능들을 제공하고 있습니다. 그 중 하나가 바로 File Uploader입니다. PSR-7에서는 업로드 객체를 만드는 내용까지만 명시되어있습니다. 하지만 Wandu에서는 해당 업로더를 제공하고 있습니다.
 
 **Example.**
 

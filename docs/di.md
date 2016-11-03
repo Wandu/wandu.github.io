@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 컨테이너(Container)
 anchor: di
 ---
